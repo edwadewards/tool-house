@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+
+  <!-- icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+
+  <!-- css -->
+  <link rel="stylesheet" href="style.css">
+  <!-- javascript -->
+  <script defer src="weather.js"></script>
+  <script defer src="calculator.js"></script>
+  <script defer src="weight-converter.js"></script>
+  <title>Tool House</title>
+</head>
+<body>
+  <div class="wrapper">
+    <nav class="nav__mobile">
+      <ul class="nav__mobile-items">
+        <li>
+          <a href="#weather"><i class="fa-solid fa-cloud"></i> Weather</a>
+        </li>
+        <li>
+          <a href="#calculator"><i class="fa-solid fa-calculator"></i> Calculator</a>
+        </li>
+        <li>
+          <a href="#weight-converter"><i class="fa-solid fa-scale-balanced"></i> Weight Converter</a>
+        </li>
+      </ul>
+    </nav>
+
+    <nav class="nav__desktop">
+      <div class="tool-house__info">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        <h2>Tool House</h2>
+        <p>Multipurpose utilities</p>
+      </div>
+      <ul class="nav__desktop-items">
+        <li>
+          <a href="#weather"><i class="fa-solid fa-cloud"></i>  Weather</a>
+        </li>
+        <li>
+          <a href="#calculator"><i class="fa-solid fa-calculator"></i>  Calculator</a>
+        </li>
+        <li>
+          <a href="#weight-converter"><i class="fa-solid fa-scale-balanced"></i>  Weight Converter</a>
+        </li>
+      </ul>
+      <div class="my-content">
+        <h3>Check out my work!</h3>
+        <a href="https://edwadewards.github.io/Starbucks-Clone/" target="_blank" rel="noopener noreferrer">
+          <img src="img/starbucks.png" alt="starbucks logo" height="50" width="50">
+        </a>
+        <a href="https://www.etrac-h.com/" target="_blank" rel="noopener noreferrer">
+          <img src="img/etrach.jpg" alt="east tennessee relic and coin hunters club logo" height="50" width="50">
+        </a>
+        <a href="https://github.com/edwadewards" target="_blank" rel="noopener noreferrer">
+          <img src="img/github.png" alt="github logo" height="50" width="50">
+        </a>
+        <a href="https://twitter.com/alpacaslacks">
+          <img src="img/twitter.webp" alt="twitter logo" height="50" width="50">
+        </a>
+        <a href="https://www.linkedin.com/in/wadecedwards/" target="_blank" rel="noopener noreferrer">
+          <img src="img/linkedin.webp" alt="linked in logo" height="50" width="50">
+        </a>
+      </div>
+    </nav>
+
+    <section id="weather">
+      <header class="weather__header">
+        <h1><i class="fa-solid fa-cloud"></i> Check the Weather</h1>
+      </header>
+      <div class="weather__dash">
+        <form action="GET" class="weather__form">
+          <label for="location"><i class="fa-solid fa-magnifying-glass"></i> </label>
+          <input type="text" class="location-input" placeholder="Enter Your Location">
+        </form>
+        <div class="weather__location-container">
+          <h2 class="weather__dash-location" data-location>Location</h2>
+          <canvas id="icon" width="20" height="20"></canvas>
+        </div>
+        <div class="weather__data-container">
+          <div class="weather__dash-temperature">
+            <h3>Temperature</h3>
+            <p class="weather__data" data-temp>76</p>
+          </div>
+          <div class="weather__dash-wind bordered">
+            <h3>Wind</h3>
+            <p class="weather__data" data-wind>64</p>
+          </div>
+          <div class="weather__dash-precipitation">
+            <h3>Precipitation</h3>
+            <p class="weather__data" data-precipitation>8</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="calculator">
+      <h1><i class="fa-solid fa-calculator"></i> Do Some Math</h1>
+      <div class="calculator">
+        <div class="calculator__screen">
+          <div class="entered-data"></div>
+          <div class="current-data"></div>
+        </div>
+        <button class="btn-operator">+</button>
+        <button class="btn-operator">-</button>
+        <button class="btn-operator">÷</button>
+        <button class="btn-operator">x</button>
+        <button class="btn-number">1</button>
+        <button class="btn-number">2</button>
+        <button class="btn-number">3</button>
+        <button class="btn-number">4</button>
+        <button class="btn-number">5</button>
+        <button class="btn-number">6</button>
+        <button class="btn-number">7</button>
+        <button class="btn-number">8</button>
+        <button class="btn-number">9</button>
+        <button class="btn-number">0</button>
+        <button class="btn-number">.</button>
+        <button class="btn-clear">C</button>
+        <button class="btn-equals">=</button>
+      </div>
+    </section>
+
+    <section id="weight-converter">
+      <h1><i class="fa-solid fa-scale-balanced"></i> Ever Wondered How Many Grams Are In a Pound?</h1>
+      <div class="converter__form-container">
+        <form action="GET" class="converter__form">
+          <input type="number" placeholder="Enter number and select weight..." id="number-value">
+          <select name="weight" id="weight-selection">
+            <option value="pounds">
+              Pounds
+            </option>
+            <option value="grams">
+              Grams
+            </option>
+            <option value="kilograms">
+              Kilograms
+            </option>
+            <option value="ounces">
+              Ounces
+            </option>
+          </select>
+        </form>
+      </div>
+      <div class="dash-container">
+        <div class="weight-type pounds-dash" data-dash>
+          <h2 id="pounds">Pounds:</h1>
+          <p class="pounds-output"></p>
+        </div>
+        
+        <div class="weight-type grams-dash" data-dash="">
+          <h2 id="grams">Grams:</h1>
+          <p class="grams-output"></p>
+        </div>
+        
+        <div class="weight-type kilograms-dash" data-dash="">
+          <h2 id="kilograms">Kilograms:</h1>
+          <p class="kg-output"></p>
+        </div>
+        
+        <div class="weight-type ounces-dash" data-dash="">
+          <h2 id="ounces">Ounces:</h1>
+          <p class="oz-output"></p>
+        </div>
+      </div>
+    </section>
+    <div class="bg-item1"></div>
+    <div class="bg-item2"></div>
+  </div>
+</body>
+</html>
