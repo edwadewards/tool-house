@@ -466,11 +466,11 @@ ul.nav__mobile-items > li > a {
   }
   .weight-type {
     max-width: 300px;
-    min-height: 17vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     gap: .55em;
+    padding: .55em;
   }
 } 
