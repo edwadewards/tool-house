@@ -80,13 +80,6 @@ h3 {
   gap: .5em;
 }
 
-.tool-house__info i {
-  font-size: 2rem;
-  border: 2px solid var(--th-text);
-  border-radius: 50%;
-  padding: .55em;
-}
-
 .nav__desktop-items {
   display: flex;
   flex-direction: column;
@@ -97,7 +90,6 @@ h3 {
 }
 
 .my-content {
-  /* background-color: var(--th-bubble); */
   background-color: #fff;
   border-radius: 5px;
   padding: 1em;
@@ -156,19 +148,33 @@ ul.nav__mobile-items > li > a {
   justify-content: center;
   background-color: #fff;
   max-width: 80%;
-  padding: 3em;
+  padding: clamp(1em, 1vw + 1em, 3em);
   margin: 0 auto;
   border-radius: 5px;
 }
 
-.weather__dash .weather__form {
+.loading {
+  visibility: hidden;
+  min-height: 10em;
+  position: relative;
+}
+
+.loading::before {
+  content: 'Loading...';
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  color: var(--th-text);
+}
+
+.weather__dash .weather__search-container {
   width: 40ch;
   padding: .65em;
   border-bottom: 1px solid var(--th-text);
   display: flex;
 }
 
-.weather__dash .weather__form i {
+.weather__dash .weather__search-container i {
   font-size: 1.1rem;
   margin-right: 15px;
 }
@@ -180,9 +186,36 @@ ul.nav__mobile-items > li > a {
   outline: none;
 }
 
+.weather__dash-search {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
 .weather__dash .weather__location-container {
   margin: 2em 0;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.weather__dash .weather__description-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.weather__dash .icon {
+  background-color: var(--th-bubble);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.weather__dash .weather__description {
+  text-transform: capitalize;
 }
 
 .weather__dash .weather__data-container {
@@ -198,17 +231,18 @@ ul.nav__mobile-items > li > a {
   align-items: center;
   justify-content: center;
   gap: 1em;
+  max-width: 12rem;
+  padding: 0 2em;
 }
 
 .weather__data {
-  font-size: 4rem;
+  font-size: clamp(1rem, 1vw + .75rem, 2rem);
   text-align: center;
 }
 
 .bordered {
   border-left: 1px solid var(--th-text);
   border-right: 1px solid var(--th-text);
-  padding: 0 2em;
 }
 
 /* calculator section */
@@ -246,14 +280,14 @@ ul.nav__mobile-items > li > a {
   font-size: 2rem;
 }
 
-button {
+.calculator button {
   border: none;
   font-size: 1.6rem;
   cursor: pointer;
   background-color: #fff;
 }
 
-button:hover {
+.calculator button:hover {
   background-color: #eee;
 }
 
@@ -397,3 +431,24 @@ button:hover {
     
     }   
  }
+
+@media (max-width: 600px) {
+  ul.nav__mobile-items > li > a {
+    font-size: 12px;
+  }
+  .weather__data-container > div > h3,
+  .weather__data-container > div > p {
+    font-size: 1rem;
+  }
+  .converter__form > input {
+    min-width: 26ch;
+  }
+  .converter__form > input,
+  .converter__form > select {
+    padding: .45em;
+    font-size: .8rem;
+  }
+  .weight-type {
+    width: 475px;
+  }
+} 

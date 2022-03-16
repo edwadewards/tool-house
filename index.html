@@ -10,6 +10,9 @@
   <!-- icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="https://fontmeme.com/permalink/220316/d72a2d1091de8ca23b6d7405528f7a93.png">
+
   <!-- css -->
   <link rel="stylesheet" href="style.css">
   <!-- javascript -->
@@ -36,7 +39,7 @@
 
     <nav class="nav__desktop">
       <div class="tool-house__info">
-        <i class="fa-solid fa-screwdriver-wrench"></i>
+        <a href="https://fontmeme.com/fonts/robota-font/" target="_blank"><img src="https://fontmeme.com/permalink/220316/d9aa1c9b2b4bfe8a80529c821132419c.png" alt="robota-font" border="0"></a>
         <h2>Tool House</h2>
         <p>Multipurpose utilities</p>
       </div>
@@ -75,14 +78,17 @@
       <header class="weather__header">
         <h1><i class="fa-solid fa-cloud"></i> Check the Weather</h1>
       </header>
-      <div class="weather__dash">
-        <form action="GET" class="weather__form">
-          <label for="location"><i class="fa-solid fa-magnifying-glass"></i> </label>
-          <input type="text" class="location-input" placeholder="Enter Your Location">
-        </form>
+      <div class="weather__dash loading">
+        <div class="weather__search-container">
+          <button class="weather__dash-search" data-search><i class="fa-solid fa-magnifying-glass"></i></button>
+        <input type="text" class="location-input" placeholder="Enter Your Location" id="location">
+        </div>
         <div class="weather__location-container">
-          <h2 class="weather__dash-location" data-location>Location</h2>
-          <canvas id="icon" width="20" height="20"></canvas>
+          <h2 data-location>Location</h2>
+          <div class="weather__description-container">
+            <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" />
+            <h2 class="weather__description" data-description>Partly Cloudy</h2>
+          </div>
         </div>
         <div class="weather__data-container">
           <div class="weather__dash-temperature">
@@ -93,9 +99,9 @@
             <h3>Wind</h3>
             <p class="weather__data" data-wind>64</p>
           </div>
-          <div class="weather__dash-precipitation">
-            <h3>Precipitation</h3>
-            <p class="weather__data" data-precipitation>8</p>
+          <div class="weather__dash-humidity">
+            <h3>Humidity</h3>
+            <p class="weather__data" data-humidity>8</p>
           </div>
         </div>
       </div>
@@ -171,8 +177,8 @@
         </div>
       </div>
     </section>
-    <div class="bg-item1"></div>
-    <div class="bg-item2"></div>
+    <!-- <div class="bg-item1"></div>
+    <div class="bg-item2"></div> -->
   </div>
 </body>
 </html>
