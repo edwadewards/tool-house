@@ -1,25 +1,50 @@
-// window.addEventListener('load', () => {
-
-// })
-
 let weather = {
   apiKey: "8ab0a609f8652223d5167e4b34e78951",
-  getWeather: function () {
+  fetchWeather: function (city) {
     fetch(
-      "api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={apiKey}"
+      "https://api.openweathermap.org/data/2.5/weather?q=" +
+        city +
+        "&units=imperial&appid=" +
+        this.apiKey
     )
-      .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((response) => {
+        if (!response.ok) {
+          alert("No weather found.");
+          throw new Error("No weather found.");
+        }
+        return response.json();
+      })
+      .then((data) => this.displayWeather(data));
   },
-  displayWeather: function(data) {
+  displayWeather: function (data) {
+    const { name } = data;
+    const { icon, description } = data.weather[0];
+    const { temp, humidity } = data.main;
+    const { speed } = data.wind;
+    document.querySelector("[data-location]").innerText = name;
+    document.querySelector(".icon").src =
+      "https://openweathermap.org/img/wn/" + icon + ".png";
+    document.querySelector("[data-description]").innerText = description;
+    document.querySelector("[data-temp]").innerText = temp + "°F";
+    document.querySelector("[data-humidity]").innerText = humidity + "%";
+    document.querySelector("[data-wind]").innerText =
+      speed + " mph";
+    document.querySelector(".weather__dash").classList.remove("loading");
+  },
+  search: function () {
+    this.fetchWeather(document.querySelector(".location-input").value);
+  },
+};
 
-  }
-};  
+document.querySelector("[data-search]").addEventListener("click", function () {
+  weather.search();
+});
 
-const locInput = document.querySelector('.location-input');
-const locOutput = document.querySelector('[data-location]');
-const temperature = document.querySelector('[data-temp]');
-const wind = document.querySelector('[data-wind]');
-const precipitation = document.querySelector('[data-precipitation]');
-// const icon = document.getElementById(icon);
+document.querySelector(".location-input").addEventListener("keyup", function (event) {
+    if (event.key == "Enter") {
+      weather.search();
+    }
+  });
+
+weather.fetchWeather("Gadsden");
 
