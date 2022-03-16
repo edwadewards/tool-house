@@ -116,7 +116,6 @@ ul.nav__mobile-items {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin: 0 auto;
   padding: .25em .5em;
 }
 
@@ -341,13 +340,12 @@ ul.nav__mobile-items > li > a {
 }
 
 .weight-type {
-  min-height: 15vh;
   width: max(470px, 45vw);
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 3em;
+  padding: 2em;
   border-radius: 5px;
 }
 
@@ -385,7 +383,7 @@ ul.nav__mobile-items > li > a {
   /* animation: bubble2 5s linear 100; */
 }
 
-@keyframes bubble1 {
+/* @keyframes bubble1 {
   0% {
     transform: translate(0px,0px);
    
@@ -431,11 +429,11 @@ ul.nav__mobile-items > li > a {
     transform:translate(0px,0px);
     
     }   
- }
+ } */
 
 @media (max-width: 600px) {
   ul.nav__mobile-items > li > a {
-    font-size: 12px;
+    font-size: 10px;
   }
   .weather__location-container {
     display: flex;
@@ -467,6 +465,12 @@ ul.nav__mobile-items > li > a {
     font-size: .8rem;
   }
   .weight-type {
-    max-width: 400px;
+    max-width: 300px;
+    min-height: 17vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: .55em;
   }
 } 
