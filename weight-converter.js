@@ -59,3 +59,9 @@ weightSelect.addEventListener('change', (e) => {
     }
   });
 });
+
+numberValue.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+  }
+});

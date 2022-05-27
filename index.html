@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <!-- fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
 
@@ -11,11 +11,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 
   <!-- favicon -->
-  <link rel="icon" type="image/x-icon" href="https://fontmeme.com/permalink/220316/d72a2d1091de8ca23b6d7405528f7a93.png">
+  <link rel="icon" type="image/x-icon" href="img/th-logo.webp">
 
   <!-- css -->
   <link rel="stylesheet" href="style.css">
   <!-- javascript -->
+  <script src="script.js"></script>
   <script defer src="weather.js"></script>
   <script defer src="calculator.js"></script>
   <script defer src="weight-converter.js"></script>
@@ -23,23 +24,10 @@
 </head>
 <body>
   <div class="wrapper">
-    <nav class="nav__mobile">
-      <ul class="nav__mobile-items">
-        <li>
-          <a href="#weather"><i class="fa-solid fa-cloud"></i> Weather</a>
-        </li>
-        <li>
-          <a href="#calculator"><i class="fa-solid fa-calculator"></i> Calculator</a>
-        </li>
-        <li>
-          <a href="#weight-converter"><i class="fa-solid fa-scale-balanced"></i> Weight Converter</a>
-        </li>
-      </ul>
-    </nav>
 
     <nav class="nav__desktop">
       <div class="tool-house__info">
-        <a href="https://fontmeme.com/fonts/robota-font/" target="_blank"><img src="https://fontmeme.com/permalink/220316/d9aa1c9b2b4bfe8a80529c821132419c.png" alt="robota-font" border="0"></a>
+        <a href="https://fontmeme.com/fonts/robota-font/" target="_blank"><img src="img/th-logo.webp" alt="logo for tool house" height="90" width="80"></a>
         <h2>Tool House</h2>
         <p>Multipurpose utilities</p>
       </div>
@@ -56,17 +44,11 @@
       </ul>
       <div class="my-content">
         <h3>Check out my work!</h3>
-        <a href="https://edwadewards.github.io/Starbucks-Clone/" target="_blank" rel="noopener noreferrer">
-          <img src="img/starbucks.png" alt="starbucks logo" height="50" width="50">
-        </a>
-        <a href="https://www.etrac-h.com/" target="_blank" rel="noopener noreferrer">
-          <img src="img/etrach.jpg" alt="east tennessee relic and coin hunters club logo" height="50" width="50">
+        <a href="https://www.wadecedwards.com/" target="_blank" rel="noopener noreferrer">
+          <img src="img/we-logo.png" alt="my website logo" class="portfolio-img" height="50" width="50">
         </a>
         <a href="https://github.com/edwadewards" target="_blank" rel="noopener noreferrer">
           <img src="img/github.png" alt="github logo" height="50" width="50">
-        </a>
-        <a href="https://twitter.com/alpacaslacks">
-          <img src="img/twitter.webp" alt="twitter logo" height="50" width="50">
         </a>
         <a href="https://www.linkedin.com/in/wadecedwards/" target="_blank" rel="noopener noreferrer">
           <img src="img/linkedin.webp" alt="linked in logo" height="50" width="50">
@@ -80,8 +62,10 @@
       </header>
       <div class="weather__dash loading">
         <div class="weather__search-container">
-          <button class="weather__dash-search" data-search><i class="fa-solid fa-magnifying-glass"></i></button>
-        <input type="text" class="location-input" placeholder="Enter Your Location" id="location">
+          <button class="weather__dash-search" data-search>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <input type="text" class="location-input" placeholder="Enter Your Location" id="location">
         </div>
         <div class="weather__location-container">
           <h2 data-location>Location</h2>
