@@ -27,13 +27,20 @@ body {
 
 /* presets */
 section {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
   backdrop-filter: blur(1rem);
+}
+
+#weather, #weight-converter {
+  background: linear-gradient(to left bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+}
+
+#calculator {
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.7));
 }
 
 h1, h2, h3, a, i, p, button {
@@ -70,6 +77,7 @@ h3 {
   top: 0;
   left: 0;
   background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  border-right: 1px solid rgba(255, 255, 255, 0.05)
 }
 
 .tool-house__info {
@@ -102,8 +110,11 @@ h3 {
 }
 
 .my-content img {
-  border-radius: 50%;
   margin: 8px;
+}
+
+.my-content img:not(.portfolio-img) {
+  border-radius: 50%;
 }
 
 /* mobile-nav */
@@ -125,9 +136,6 @@ ul.nav__mobile-items > li > a {
 }
 
 @media (min-width: 1200px) {
-  .nav__mobile {
-    display: none;
-  }
   .nav__desktop {
     display: flex;
     flex-direction: column;
