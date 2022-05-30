@@ -6,3 +6,9 @@ Calculator
 Weight Converter - user enters number and chooses Pounds, Kilograms, Grams, or Ounces and gets conversion results between them.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/15f344c2-6661-4aaa-b9f8-d21dcd18264e/deploy-status)](https://app.netlify.com/sites/tool-house/deploys)
+
+![](https://github.com/edwadewards/tool-house/blob/main/readME-img/toolhouse1.png)
+
+![](https://github.com/edwadewards/tool-house/blob/main/readME-img/toolhouse2.png)
+
+![](https://github.com/edwadewards/tool-house/blob/main/readME-img/toolhouse3.png)
